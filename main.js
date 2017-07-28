@@ -45,11 +45,17 @@ function question3() {
   return GBP_currency
 }
 
-console.log(GBP_currency);
-
 // 4: Display a list of all items who are made of wood.
 function question4() {
   // Answer:
+  let items_made_of_wood = []
+  for (var i = 0; i < data.length; i++) {
+    for (var m = 0; m < materials.length; m++) {
+      if (data[i].material[m] === "wood"){
+        items_made_of_wood.push(data[i]);
+      }
+    }
+  }
 }
 
 
