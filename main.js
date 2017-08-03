@@ -3,8 +3,8 @@
 // Open your `index.html` page in your browser and you can verify that the following
 // is properly working. The `data` variable is an array with 25 items in it
 
-/
 
+console.log(data);
 
 // 1: Show me how to calculate the average price of all items.
 function question1() {
@@ -49,14 +49,15 @@ function question3() {
 function question4() {
   // Answer:
   let items_made_of_wood = []
-  for (var i = 0; i < data.length; i++) {
-    for (var m = 0; m < materials.length; m++) {
-      if (data[i].material[m] === "wood") {
+  for (let i = 0; i < data.length; i++) {
+    for (let m = 0; m < data[i].materials.length; m++) {
+      if (data[i].materials[m] === "wood") {
         items_made_of_wood.push(data[i]);
       }
     }
   }
-  return items_made_of_wood
+  console.log(items_made_of_wood);
+  return items_made_of_wood;
 }
 
 
@@ -75,7 +76,7 @@ function question5() {
     }
   });
 }
-}
+
 
 
 // 6: How many items were made by their sellers?
