@@ -3,7 +3,7 @@
 // Open your `index.html` page in your browser and you can verify that the following
 // is properly working. The `data` variable is an array with 25 items in it
 
-
+/
 
 
 // 1: Show me how to calculate the average price of all items.
@@ -51,18 +51,30 @@ function question4() {
   let items_made_of_wood = []
   for (var i = 0; i < data.length; i++) {
     for (var m = 0; m < materials.length; m++) {
-      if (data[i].material[m] === "wood"){
+      if (data[i].material[m] === "wood") {
         items_made_of_wood.push(data[i]);
       }
     }
   }
+  return items_made_of_wood
 }
+
 
 
 // 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
 function question5() {
   // Answer:
+  data.forEach(function(item) {
+    let numOfMaterials = item.materials.length;
+    if (numOfMaterials >= 8) {
+      console.log(item.title + ' has ' + numOfMaterials + ' materials');
+      item.materials.forEach(function(material) {
+        console.log('- ' + material);
+      });
+    }
+  });
+}
 }
 
 
@@ -70,4 +82,9 @@ function question5() {
 // Answer:
 function question6() {
   // Answer:
+  let total = 0;
+  data.forEach(function(item) {
+    if (item.who_made === 'i_did')
+      total++;
+  });
 }
